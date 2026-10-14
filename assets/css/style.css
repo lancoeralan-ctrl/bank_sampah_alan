@@ -1,0 +1,220 @@
+/* ============================================
+   Bank Sampah - Tema Orange & Hitam Futuristik
+   ============================================ */
+
+:root {
+  --orange: #ff6b00;
+  --orange-light: #ff9142;
+  --orange-glow: rgba(255, 107, 0, 0.35);
+  --bg-dark: #0b0b0d;
+  --surface: #17171a;
+  --surface-2: #202024;
+  --text-main: #ffffff;
+  --text-muted: #c7c7cc;
+  --border-soft: rgba(255, 107, 0, 0.22);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: radial-gradient(circle at top left, #1a1006 0%, #0b0b0d 45%, #050505 100%);
+  color: var(--text-main);
+  font-family: 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* ---------- Navbar ---------- */
+.navbar-app {
+  background: linear-gradient(90deg, #120b06 0%, #241505 100%);
+  border-bottom: 1px solid var(--border-soft);
+  box-shadow: 0 2px 20px rgba(255, 107, 0, 0.08);
+}
+.navbar-app .navbar-brand {
+  color: var(--orange) !important;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.navbar-app .navbar-brand span { color: var(--text-main); }
+.navbar-app .nav-link { color: var(--text-muted) !important; }
+.navbar-app .nav-link:hover { color: var(--orange-light) !important; }
+
+/* ---------- Sidebar ---------- */
+.sidebar {
+  background: var(--surface);
+  min-height: calc(100vh - 56px);
+  border-right: 1px solid var(--border-soft);
+  padding-top: 1rem;
+}
+.sidebar a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 12px 22px;
+  border-left: 3px solid transparent;
+  transition: all 0.2s ease;
+  font-size: 0.98rem;
+  font-weight: 500;
+}
+.sidebar a:hover {
+  background: rgba(255, 107, 0, 0.08);
+  color: var(--orange-light);
+}
+.sidebar a.active {
+  background: rgba(255, 107, 0, 0.12);
+  color: var(--orange);
+  border-left-color: var(--orange);
+  font-weight: 600;
+}
+
+/* ---------- Cards ---------- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: 16px;
+  color: var(--text-main);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px var(--orange-glow);
+}
+.card-stat {
+  border-left: 4px solid var(--orange);
+}
+.card-stat .value { font-size: 1.8rem; font-weight: 800; color: var(--orange); }
+.card-stat .label { color: var(--text-muted); font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; }
+
+/* ---------- Buttons ---------- */
+.btn-orange {
+  background: linear-gradient(90deg, #ff6b00, #ff9142);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: filter 0.2s ease, transform 0.15s ease;
+}
+.btn-orange:hover { filter: brightness(1.12); color: #fff; transform: translateY(-1px); }
+.btn-outline-orange {
+  border: 1px solid var(--orange);
+  color: var(--orange);
+  background: transparent;
+  border-radius: 10px;
+}
+.btn-outline-orange:hover { background: var(--orange); color: #fff; }
+
+/* ---------- Forms ---------- */
+.form-control, .form-select {
+  background: var(--surface-2);
+  border: 1px solid var(--border-soft);
+  color: var(--text-main);
+  border-radius: 10px;
+}
+.form-control:focus, .form-select:focus {
+  background: var(--surface-2);
+  color: var(--text-main);
+  border-color: var(--orange);
+  box-shadow: 0 0 0 0.2rem var(--orange-glow);
+}
+.form-control::placeholder { color: #8a8a90; }
+label { color: var(--text-muted); font-size: 0.9rem; font-weight: 600; }
+
+/* ---------- Table ---------- */
+.table {
+  color: var(--text-main);
+  --bs-table-bg: transparent;
+  font-size: 0.95rem;
+}
+.table thead th {
+  color: var(--orange-light);
+  border-bottom: 2px solid var(--border-soft);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+.table td, .table th { border-color: rgba(255,255,255,0.08); vertical-align: middle; }
+.table td { font-weight: 500; color: var(--text-main); }
+
+/* ---------- Badges status ---------- */
+.badge-pending  { background: #8a5a00; color:#ffd9a3; }
+.badge-diterima, .badge-disetujui { background: #14532d; color:#a7f3c1; }
+.badge-ditolak  { background: #5c1a1a; color:#f8b4b4; }
+
+/* ---------- Login page ---------- */
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-card {
+  width: 100%;
+  max-width: 380px;
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: 20px;
+  padding: 2.2rem;
+  box-shadow: 0 0 60px rgba(255,107,0,0.12);
+}
+.login-card h1 {
+  font-size: 1.6rem;
+  color: var(--orange);
+  font-weight: 700;
+  text-align: center;
+}
+.login-card p.subtitle {
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 1.6rem;
+  font-size: 0.9rem;
+}
+
+/* ---------- Responsif: sidebar jadi drawer di layar kecil ---------- */
+@media (max-width: 767.98px) {
+  .sidebar {
+    position: fixed;
+    top: 56px;
+    left: -260px;
+    height: calc(100vh - 56px);
+    width: 240px;
+    z-index: 1040;
+    transition: left 0.25s ease;
+    box-shadow: 4px 0 24px rgba(0,0,0,0.5);
+  }
+  .sidebar.show { left: 0; }
+}
+
+/* ---------- Animasi halus saat konten muncul ---------- */
+.flex-grow-1.p-4 > * {
+  animation: fadeInUp 0.35s ease both;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Badge status: bentuk pill lebih rapi ---------- */
+.badge-pending, .badge-diterima, .badge-disetujui, .badge-ditolak {
+  padding: 0.4em 0.8em;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: capitalize;
+}
+
+/* ---------- Scrollbar (biar konsisten futuristik) ---------- */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-dark); }
+::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 10px; }
